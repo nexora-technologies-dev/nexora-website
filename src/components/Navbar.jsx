@@ -14,9 +14,9 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/85 backdrop-blur">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src="/logo.png" alt="Nexora Logo" className="h-10 w-10 rounded-xl border border-slate-700 bg-slate-900 object-cover" />
+          <img src="/logo.jpg" alt="Nexora Logo" className="h-10 w-10 rounded-xl border border-slate-700 bg-slate-900 object-cover" />
           <div>
-            <div className="font-semibold leading-tight">Nexora Technologies</div>
+            <img src="/lockup.png" alt="Nexora Technologies" className="h-7 w-auto object-contain" />
             <div className="text-xs text-slate-400">Web Development | Data-Driven | AI Ready</div>
           </div>
         </div>

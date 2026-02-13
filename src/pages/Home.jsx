@@ -78,7 +78,7 @@ export default function Home() {
 
         <div className="rounded-3xl overflow-hidden border border-slate-800 bg-slate-900/70 shadow-2xl shadow-slate-950">
           <img
-            src="/banner.jpg"
+            src="/banner.png"
             alt="Nexora Banner"
             className="w-full h-80 object-cover"
           />
