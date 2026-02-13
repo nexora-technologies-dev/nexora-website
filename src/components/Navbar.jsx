@@ -1,24 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const linkClass = ({ isActive }) =>
-  `px-3 py-2 rounded-lg text-sm transition ${
+  `px-4 py-2 rounded-lg text-sm font-medium transition ${
     isActive ? "bg-slate-800 text-white" : "text-slate-300 hover:bg-slate-900 hover:text-white"
   }`;
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const closeMenu = () => setIsOpen(false);
+
   return (
-    <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+    <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/85 backdrop-blur">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src="/logo.png" alt="Nexora Logo" className="h-9 w-9 rounded-lg bg-slate-900 object-cover" />
+          <img src="/logo.png" alt="Nexora Logo" className="h-10 w-10 rounded-xl border border-slate-700 bg-slate-900 object-cover" />
           <div>
             <div className="font-semibold leading-tight">Nexora Technologies</div>
-            <div className="text-xs text-slate-400">Web Development • Data-Driven • AI-ready</div>
+            <div className="text-xs text-slate-400">Web Development | Data-Driven | AI Ready</div>
           </div>
         </div>
 
-        <nav className="flex items-center gap-1">
+        <button
+          type="button"
+          className="md:hidden rounded-lg border border-slate-700 px-3 py-2 text-sm text-slate-200"
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-label="Toggle navigation"
+        >
+          Menu
+        </button>
+
+        <nav className="hidden md:flex items-center gap-2">
           <NavLink to="/" className={linkClass}>Home</NavLink>
           <NavLink to="/about" className={linkClass}>About</NavLink>
           <NavLink to="/services" className={linkClass}>Services</NavLink>
@@ -26,6 +38,18 @@ export default function Navbar() {
           <NavLink to="/contact" className={linkClass}>Contact</NavLink>
         </nav>
       </div>
+
+      {isOpen && (
+        <div className="md:hidden border-t border-slate-800/80">
+          <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 grid gap-2">
+            <NavLink to="/" className={linkClass} onClick={closeMenu}>Home</NavLink>
+            <NavLink to="/about" className={linkClass} onClick={closeMenu}>About</NavLink>
+            <NavLink to="/services" className={linkClass} onClick={closeMenu}>Services</NavLink>
+            <NavLink to="/team" className={linkClass} onClick={closeMenu}>Team</NavLink>
+            <NavLink to="/contact" className={linkClass} onClick={closeMenu}>Contact</NavLink>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
