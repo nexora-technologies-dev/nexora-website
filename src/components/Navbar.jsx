@@ -9,14 +9,15 @@ const linkClass = ({ isActive }) =>
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const closeMenu = () => setIsOpen(false);
+  const baseUrl = import.meta.env.BASE_URL;
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/85 backdrop-blur">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src="/logo.jpg" alt="Nexora Logo" className="h-10 w-10 rounded-xl border border-slate-700 bg-slate-900 object-cover" />
+          <img src={`${baseUrl}logo.jpg`} alt="Nexora Logo" className="h-10 w-10 rounded-xl border border-slate-700 bg-slate-900 object-cover" />
           <div>
-            <img src="/lockup.png" alt="Nexora Technologies" className="h-7 w-auto object-contain" />
+            <img src={`${baseUrl}lockup.png`} alt="Nexora Technologies" className="h-7 w-auto object-contain" />
             <div className="text-xs text-slate-400">Web Development | Data-Driven | AI Ready</div>
           </div>
         </div>

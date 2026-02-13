@@ -33,6 +33,8 @@ const workflow = [
 ];
 
 export default function Home() {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <div className="space-y-16">
       <section className="grid lg:grid-cols-2 gap-10 items-center">
@@ -78,7 +80,7 @@ export default function Home() {
 
         <div className="rounded-3xl overflow-hidden border border-slate-800 bg-slate-900/70 shadow-2xl shadow-slate-950">
           <img
-            src="/banner.png"
+            src={`${baseUrl}banner.png`}
             alt="Nexora Banner"
             className="w-full h-80 object-cover"
           />
