@@ -1,16 +1,58 @@
-# React + Vite
+# Nexora Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Professional multi-page company website for Nexora Technologies, built with React, Vite, React Router, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19
+- Vite 7
+- React Router DOM 7
+- Tailwind CSS 3
 
-## React Compiler
+## Local Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+Build for production:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run build
+```
+
+## Deployment
+
+The repository deploys automatically to GitHub Pages using:
+
+- `.github/workflows/deploy-pages.yml`
+
+Live URL:
+
+- `https://nexora-technologies-dev.github.io/nexora-website/`
+
+## SEO and Social Preview
+
+Configured in `index.html`:
+
+- title and description
+- canonical URL
+- Open Graph tags
+- Twitter card tags
+- favicon and Apple touch icon from `public/logo.png`
+
+Configured in `public/`:
+
+- `robots.txt`
+- `sitemap.xml`
+
+## Custom Domain Readiness
+
+When you are ready to move from GitHub Pages subpath to a custom domain:
+
+1. Set `base: '/'` in `vite.config.js`.
+2. Add `public/CNAME` containing only your domain (example: `www.nexora.com`).
+3. Update canonical/OG/Twitter URLs in `index.html` to your domain.
+4. Update URLs in `public/sitemap.xml` and `public/robots.txt`.
+5. In GitHub repo Settings > Pages, set your custom domain and enforce HTTPS.
