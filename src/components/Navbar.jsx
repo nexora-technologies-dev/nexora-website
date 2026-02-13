@@ -17,7 +17,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <img src={`${baseUrl}logo.jpg`} alt="Nexora Logo" className="h-10 w-10 rounded-xl border border-slate-700 bg-slate-900 object-cover" />
           <div>
-            <img src={`${baseUrl}lockup.png`} alt="Nexora Technologies" className="h-7 w-auto object-contain" />
+            <div className="font-semibold leading-tight">Nexora Technologies</div>
             <div className="text-xs text-slate-400">Web Development | Data-Driven | AI Ready</div>
           </div>
         </div>

@@ -2,13 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Footer() {
-  const baseUrl = import.meta.env.BASE_URL;
-
   return (
     <footer className="mt-16 border-t border-slate-800/90 bg-slate-950/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid gap-8 md:grid-cols-3">
         <div className="space-y-3">
-          <img src={`${baseUrl}lockup.png`} alt="Nexora Technologies" className="h-8 w-auto object-contain" />
+          <div className="font-semibold text-lg">Nexora Technologies</div>
           <p className="text-sm text-slate-400">
             Professional web solutions for startups and growing businesses with a focus on speed, stability, and conversion.
           </p>
